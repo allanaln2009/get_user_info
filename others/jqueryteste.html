@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script language="JavaScript" type="text/javascript">
+		
+		$(document).ready(function(){
+			///*
+			var pageNumber = 1;
+			var page = ".page";
+			var classePage = page+""+pageNumber;
+			//*/
+			$("button.exibir").hide();
+			$("#ocultar").click(function(){
+				$(".1").hide(500);
+				$(this).hide();
+				$("#exibir").show(500);
+			});
+			$("#exibir").click(function(){
+				$(".1").show(500);
+				$(this).hide();
+				$("#ocultar").show(500);
+			});
+			$("#alternar").click(function(){
+				$(".1").toggle();
+				$("#exibir").toggle();
+				$("#ocultar").toggle();
+			});
+			/*
+			$(".slidedown").click(function(){
+				$(".painel").slideDown(200);
+			});
+			*/
+			$(".slidedown").click(function(){
+				$(".painel").slideToggle(200);
+			});
+			$("#btnFadeTo").click(function(){
+				$(".transp").fadeTo(1000, 0.25);
+			});
+			$("#btnFadeIn").click(function(){
+				$(".transp").fadeIn(2000);
+			});
+			$("#btnFadeOut").click(function(){
+				$(".transp").fadeOut(2000);
+			});
+			$("#startAnim").click(function(){
+				$(".animation").animate({height:300}, "slow");
+			});
+			$("#page1").click(function(){
+				$(classePage).toggle();
+				var pageNumber = pageNumber+1;
+				var classePage = page+""+pageNumber;
+			});
+			$("#page2").click(function(){
+				$(classePage).toggle();
+			});
+
+			var count = 5;
+			$('#add').click(function(){
+			  alert(count);
+			  count++;
+			});
+		});
+		/*
+		var jq=jQuery.noConflict();
+		jq(seletor).acao()
+
+		$(seletor).acao()
+		$(this).hide() // ocultar elemento atual
+		$("p").hide() // ocultar tags <p>
+		$("p.teste").hide() // ocultar tags <p> com classe "teste"
+		$("#teste").hide() // ocultar elementos com ID "teste"
+		$("[href]") // seleciona todos elementos com o atributo href
+		$("[href='#']") // seleciona todos href com o valor igual a #
+		$("[href!='#']") // seleciona todos href com o valor diferente de #
+		$("[href$='.jpg']") // seleciona todos href com o valor terminado em .jpg
+
+		$().ready(function)
+		$().click(function)
+		$().dblclick(function)
+		$().focus(function)
+		$().mouseover(function)
+		$().change(function)
+		$().keypress(function)
+		$().submit(function)
+		$().resize(function)
+		*/
+	</script>
+	<style type="text/css">
+		div.painel, p.slidedown{
+			margin: 0;
+			padding: 4px;
+			text-align: center;
+			background: #e5eecc;
+			border: solid 1px #c3c3c3;
+			}
+		div.painel{
+			height: 120px;
+			display: none;
+		}
+		div.transp{
+			background: yellow;
+			width: 300px;
+			height: 300px;
+		}
+		div.animation{
+			background: #98bf21;
+			width: 100px;
+			height: 100px;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+/*
+	var pageNumber = 1;
+	var page = ".page";
+	var classePage = page.concat(pageNumber);
+	document.write ("1 - ");
+	document.write(page);
+	document.write ("<BR> 2 - ");
+	document.write(pageNumber);
+	document.write ("<BR> 3 - ");
+	document.write(classePage);
+*/
+</script>
+<br><br>
+<pag id="page1">Página 1</pag>
+<pag id="page2">Página 2</pag>
+<pag id="add">Página 2</pag>
+
+<div class="page1">
+	<h2>Título</h2>
+	<p class="1">Parágrafo 1</p>
+	<p class="1">Parágrafo 2</p>
+	<button id="ocultar">Ocultar paragrafo</button>
+	<button id="exibir" class="exibir">Exibir paragrafo</button>
+	<button id="alternar">Alternar</button>
+	<br><br>
+	<div class="painel">
+		<p>Paragrafo 1</p>
+		<p>Paragrafo 2</p>
+	</div>
+	<p class="slidedown">Mostrar/ocultar painel</p>
+	<br><br>
+	<div class="transp">
+	<button id="btnFadeTo">Fade To</button>
+	</div>
+	<button id="btnFadeIn">Fade In</button>
+	<button id="btnFadeOut">Fade Out</button>
+</div>
+<div class="page2" style="display: none;">
+	<button id="startAnim">Inciar animação</button><br><br>
+	<div class="animation">
+	</div>
+</div>
+</body>
+</html>

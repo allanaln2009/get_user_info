@@ -1,0 +1,24 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+
+RewriteBase /
+
+
+# Negar acesso ao .htaccess
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+# Pagina de erro personalizada
+ErrorDocument 400 /erros/400.php
+ErrorDocument 401 /erros/401.php
+ErrorDocument 403 /erros/403.php
+ErrorDocument 404 /erros/404.php
+ErrorDocument 500 /erros/500.php
+
+# evitar listagem de arquivos
+Options -Indexes
+# BEGIN WordPress
+
+# END WordPress
